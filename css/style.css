@@ -601,20 +601,15 @@ section:nth-child(odd) {
     background-color: var(--color-palette-lightblue);
   }
 
-/* HERO SECTION*/
+/* HERO SECTIONS*/
 
 .hero {
-    /* background: var(--color-hero-background); */
-    background-image: url(../img/KualoaRanch.jpg);
     background-size: cover;
-    background-position: center;
     text-align: center;
     color: var(--color-hero-text);
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
 
     h1 {
         font-size: 4em;
@@ -627,10 +622,37 @@ section:nth-child(odd) {
 
 }
 
+.hero-full {
+    height: 100vh;
+}
+
+.hero-sixty {
+    height: 60vh;
+}
+
+.hero-homepage {
+    background-image: url(../img/KualoaRanch.jpg);
+    background-position: 30%;
+}
+
+.hero-stories {
+    background-image: url(../img/Rocky-Mountain.jpg);
+    background-position: 50% 85%;
+}
+
+/* why isn't this working? */
+.not-homepage {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+
+}
+
 /* SITE FOOTER */
 .site-footer {
-    background-color: var(--color-sitefooter-background);
-    color: var(--color-sitefooter-text);
+    background-color: var(--color-palette-navy);
+    color: var(--color-palette-cerulean);
 
     /* ADD SOME GENERAL SPACING/PADDING AROUND THE FOOTER */
     padding: var(--unit-small);
@@ -1089,7 +1111,6 @@ h4 {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border: 1px solid blue;
     }
 }
 
@@ -1144,12 +1165,13 @@ ask Chris why my helper classes .centered and .centered-mobile work using text-a
 ask Chris how to vertical center my footer items
 button animation in mobile state ok?
 ok to keep animations in mobile?
+my bottom of homepage pictures are their actual size. How do I set the size?
 
 done
 add helper class for top, bottom, and all rounded border radius
 add row of 3 side-by-side images
 fixed font size on mobile nav toggle menu
-fix envelop svg
+fix envelope svg
 arrange footer content
 Ask Chris what triggers flip or hover cards to need a click to activate - it's not the pixel size. How does the ui know it's in mobile? answer: probably pixel width? don't trust dev tools's mobile version on a computer
 add parallax
@@ -1159,7 +1181,7 @@ fix the tiny bottom margin on cards
 fix simplebase and change data navstate to closed
 */
 
-.site-footer .row {
+/* .site-footer .row {
     border: 1px solid red;
 
     > * {
@@ -1167,5 +1189,5 @@ fix simplebase and change data navstate to closed
    }
 
 }
-
+ */
 
