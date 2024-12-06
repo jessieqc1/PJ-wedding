@@ -82,6 +82,7 @@ CSS TABLE OF CONTENTS
     /* DEFINE ALL FONTS USED HERE */
     --font-body: "Lato", system-ui, Helvetica, Arial, sans-serif;
     --font-headings: "Playfair Display", system-ui, Helvetica, Arial, sans-serif;
+    --font-fancy: "corinthia";
 
     /* SIZING UNITS */
     --container-width: 1100px;
@@ -681,19 +682,24 @@ section:nth-child(odd) {
         display: block;
     }
 
-}
+    h2 {
+        margin: 0.4em 0 0 0;
+    }
 
+    h3 {
+        margin: 0 0 0.4em 0;
+    }
 
-.span-button-icon svg {
-    margin-bottom: -3px;
-}
+    p {
+        margin: 0;
+    }
 
-@media (min-width: 768px) {
-    .col-split {
-        column-span: all;
-        column-count: 2;
+    .row {
+        align-items: end;
     }
 }
+
+
 
 
 /* ------------------- */
@@ -739,6 +745,7 @@ section:nth-child(odd) {
         }
     }
 
+    
 }
 
 .span-button {
@@ -755,6 +762,14 @@ section:nth-child(odd) {
 .span-button-text {
     font-size: 112.5%;
     font-weight: bold;
+}
+
+.site-footer .button {
+    margin: 0 0 .2em 0;
+    
+    &:hover {
+        border: 2px dashed var(--color-palette-coral);
+    }
 }
 
 /* ALL CARDS */
@@ -888,11 +903,11 @@ section:nth-child(odd) {
     }
 }
 
-.hideaway {
+.trigger .hideaway {
     display: none;
 }
 
-.show {
+.trigger.show .hideaway {
     display: block;
 }
 
@@ -907,7 +922,7 @@ section:nth-child(odd) {
   
     img {
         width: 100%;
-        height: 100%;
+        height: 300px;
         object-fit: cover;
     }
     
@@ -1089,14 +1104,37 @@ html {
     }
 }
 
+/* EXPAND ON SCROLL */
+.expand {
+    animation: expand-appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes expand-appear {
+    0% {
+        opacity: 0;
+        scale: 0.5;
+    }
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+
+/* --------------- */
+/* -- CUSTOM STYLING -- */
+/* --------------- */
+
 h4 {
     margin: 0;
 }
 
-.image-block {
+.photo-block {
     padding: 0;
 
-    .image-block-inner {
+    .photo-block-inner {
         display: flex;
 
         > * {
@@ -1120,52 +1158,46 @@ h4 {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-image: url(../img/Summit.jpg);
-}
+    background-image: url(../img/Koolau-range.jpg);
 
-/* #parallax1 {
-    min-height: 300px;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-image: url(../img/Summit.jpg);
-}
-
-#parallax2 {
-    min-height: 300px;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-image: url(../img/Arboretum.jpg);
-} */
-
-
-/* EXPAND ON SCROLL */
-.expand {
-    animation: expand-appear linear;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-}
-
-@keyframes expand-appear {
-    0% {
-        opacity: 0;
-        scale: 0.5;
-    }
-    100% {
-        opacity: 1;
-        scale: 1;
+    h1 {
+        color: var(--color-links-lighter);
     }
 }
+
+#invite-sec {
+
+    h1 span {
+        display: block;
+        color: var(--color-palette-coral);
+        font-family: var(--font-fancy);
+        font-size: 2.3em;
+        transform: rotate(-7deg);
+        margin-top: -0.2em;
+        margin-bottom: -0.4em;
+    }
+    
+}
+
+.span-button-icon svg {
+    margin-bottom: -3px;
+}
+
+@media (min-width: 768px) {
+    .col-split {
+        column-span: all;
+        column-count: 2;
+    }
+}
+
 
 /* to dos
 
-javascript click to reveal on transparent cards only working on first card
+
 ask Chris why my helper classes .centered and .centered-mobile work using text-align: center, and not margin: 0 auto;
-ask Chris how to vertical center my footer items
 button animation in mobile state ok?
 ok to keep animations in mobile?
-my bottom of homepage pictures are their actual size. How do I set the size?
+
 
 done
 add helper class for top, bottom, and all rounded border radius
@@ -1179,6 +1211,9 @@ Ask Chris how to set viewport on a picture to a slim area
 fix footer on mobile
 fix the tiny bottom margin on cards
 fix simplebase and change data navstate to closed
+my bottom of homepage pictures are their actual size. How do I set the size? photoshop
+javascript click to reveal on transparent cards only working on first card
+ask Chris how to vertical center my footer items - he didn't recommend this. Instead design it to look nice. Try rearranging pieces in photoshop.
 */
 
 /* .site-footer .row {
@@ -1188,6 +1223,7 @@ fix simplebase and change data navstate to closed
         border: 1px solid yellow;
    }
 
-}
- */
+} */
+
+
 

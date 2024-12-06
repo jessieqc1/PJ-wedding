@@ -57,6 +57,7 @@ myFlipCards.forEach((el) => {
 
 // TRANSPARENT CARDS
 // Get the elements you want to interact with
+/*
 const myTransparentCards = document.querySelector('.trigger');
 const hiddenElement = document.querySelector('.hideaway');
 
@@ -64,4 +65,16 @@ const hiddenElement = document.querySelector('.hideaway');
 myTransparentCards.addEventListener('click', () => {
   // Toggle the visibility of the hidden element
   hiddenElement.classList.toggle('show');
+});
+*/
+
+const myTransparentCards = document.querySelectorAll('.trigger');
+myTransparentCards.forEach((el) => {
+  // stuff happening
+ el.onclick = () => {
+  el.classList.toggle('show');
+
+ }
+
+  
 });
