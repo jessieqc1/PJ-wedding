@@ -641,6 +641,15 @@ section:nth-child(odd) {
     background-position: 50% 85%;
 }
 
+.hero-event-day {
+    background-image: url(../img/Hawaii-Meeting-Room-Oahu.jpg);
+    background-position: center;
+
+    h1 {
+        color: var(--color-palette-navy);
+    }
+}
+
 /* why isn't this working? */
 .not-homepage {
     display: flex;
@@ -1165,7 +1174,7 @@ h4 {
     }
 }
 
-#invite-sec {
+.fancy-announce {
 
     h1 span {
         display: block;
@@ -1177,6 +1186,10 @@ h4 {
         margin-bottom: -0.4em;
     }
     
+}
+
+.test .row >* {
+    border: 1px solid red;
 }
 
 .span-button-icon svg {
