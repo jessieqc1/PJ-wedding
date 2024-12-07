@@ -31,6 +31,7 @@ CSS TABLE OF CONTENTS
 
 # UI COMPONENTS
     # BUTTONS
+    # CARDS 
 
 # ANIMATION
     # SMOOTH SCROLLING
@@ -178,6 +179,10 @@ h3 {
     line-height: 1.3;
 }
 
+h4 {
+    margin: 0;
+}
+
 p {
     /* LIMIT THE WIDTH OF ALL PARAGRAPHS TO 65 characters. TELL CHRIS this is messing up my hero centering and paragraphs in my card sections */
     /* max-width: 65ch; */
@@ -312,7 +317,7 @@ body {
     /* COMMONLY CENTERED COLUMNS */
     .one-half.centered-gridcol {grid-column: 4 / span 6;}
     .one-third.centered-gridcol {grid-column: 5 / span 4;}
-    .two-thirds.centered-col {grid-column: 3 / span 8;}
+    .two-thirds.centered-gridcol {grid-column: 3 / span 8;}
 
     /* PUSHES */
     .push-1 {grid-column-start: 2;}
@@ -331,6 +336,10 @@ body {
     .row.swapped > *:first-child { order: 2; }
     .row.swapped > *:last-child { order: 1; }
 
+}
+
+#timeline-sec .row > *{ 
+    margin: 0;
 }
 
 /* FOR DEMO PURPOSES */
@@ -600,7 +609,8 @@ section {
 
 section:nth-child(odd) {
     background-color: var(--color-palette-lightblue);
-  }
+}
+
 
 /* HERO SECTIONS*/
 
@@ -687,10 +697,6 @@ section:nth-child(odd) {
         }
     }
 
-    .next-line {
-        display: block;
-    }
-
     h2 {
         margin: 0.4em 0 0 0;
     }
@@ -757,6 +763,7 @@ section:nth-child(odd) {
     
 }
 
+/* BUTTONS WITH SPANS */
 .span-button {
     line-height: 1.5;
 }
@@ -780,6 +787,15 @@ section:nth-child(odd) {
         border: 2px dashed var(--color-palette-coral);
     }
 }
+
+.span-button-icon svg {
+    margin-bottom: -3px;
+}
+
+.span-button-subtext {
+    font-size: 90%;
+}
+
 
 /* ALL CARDS */
 .cards {
@@ -814,9 +830,6 @@ section:nth-child(odd) {
     transform-style: preserve-3d;
 }
   
-/* .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-} */
 
 .flip-card[data-flipstate="flipped"] .flip-card-inner {
     transform: rotateY(180deg);
@@ -1136,10 +1149,8 @@ html {
 /* -- CUSTOM STYLING -- */
 /* --------------- */
 
-h4 {
-    margin: 0;
-}
 
+/* PHOTO BLOCK */
 .photo-block {
     padding: 0;
 
@@ -1148,7 +1159,6 @@ h4 {
 
         > * {
             width: 100%;
-            /* max-height: 100px; */
         }
     }
 
@@ -1162,18 +1172,51 @@ h4 {
 }
 
 
+@media (max-width: 767px) {
+    .photo-block {
+        padding: 0;
+
+        .photo-block-inner {
+            display: block;
+        }
+    }
+}
+
+
+/* PARALLAX */
 .parallax {
     min-height: 300px;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    background-image: url(../img/Koolau-range.jpg);
 
     h1 {
         color: var(--color-links-lighter);
     }
 }
 
+#parallax-homepage {
+    background-image: url(../img/Koolau-range.jpg);
+}
+
+#parallax-event-day {
+    background-image: url(../img/Molokai-beach.jpg);
+}
+
+#parallax-stories1 {
+    background-image: url(../img/Rocky-Mountain.jpg);
+}
+
+#parallax-stories2 {
+    background-image: url(../img/Rocky-Mountain.jpg);
+}
+
+#parallax-stories3 {
+    background-image: url(../img/Rocky-Mountain.jpg);
+}
+
+
+/* FANCY ANNOUNCEMENT CUSTOM SPAN FONT */
 .fancy-announce {
 
     h1 span {
@@ -1188,19 +1231,27 @@ h4 {
     
 }
 
-.test .row >* {
-    border: 1px solid red;
-}
-
-.span-button-icon svg {
-    margin-bottom: -3px;
-}
 
 @media (min-width: 768px) {
     .col-split {
         column-span: all;
         column-count: 2;
     }
+}
+
+/* TINY PARAGRAPH FONT */
+#timeline-sec {
+    p span {
+        display: block;
+        font-size: 80%;
+        margin-top: 0.7em;
+        color: rgba(0 0 0 / 0.5);
+    }
+}
+
+/* START NEXT LINE OF A PARAGRAPH */
+.next-line {
+    display: block;
 }
 
 
@@ -1228,15 +1279,3 @@ my bottom of homepage pictures are their actual size. How do I set the size? pho
 javascript click to reveal on transparent cards only working on first card
 ask Chris how to vertical center my footer items - he didn't recommend this. Instead design it to look nice. Try rearranging pieces in photoshop.
 */
-
-/* .site-footer .row {
-    border: 1px solid red;
-
-    > * {
-        border: 1px solid yellow;
-   }
-
-} */
-
-
-
