@@ -4,7 +4,7 @@
 
 CSS TABLE OF CONTENTS
 
-# GLOBAL STYLES
+# GLOBAL STYLES 46
     # GLOBAL VARIABLES
     # GLOBAL COLORS
     # GLOBAL RESET
@@ -12,31 +12,41 @@ CSS TABLE OF CONTENTS
     # GLOBAL MEDIA
     # GLOBAL HELPERS
 
-#LAYOUT
+#LAYOUT 260
     # MEDIA QUERIES / BREAKPOINTS
     # CONTAINER
     # GRID
 
-# SITE STRUCTURE
+# SITE STRUCTURE 373
     # HEADER
         # LOGO
         # SITE NAV
             # TOGGLE MENU
-            # HAMBURGER MENU
         # SITE-HEADER-ON-TOP-OF-HERO
     # MAIN
         # SECTIONS
             # HERO
     #FOOTER
 
-# UI COMPONENTS
+# UI COMPONENTS 
     # BUTTONS
     # CARDS 
+    # TIMELINE
 
-# ANIMATION
+# ANIMATION 
     # SMOOTH SCROLLING
+    # SCROLL TRIGGERED ANIMATION OBSERVE ME
+    # SCROLL TRIGGERED ANIMATION EXPAND
 
-#CUSTOM STYLING
+#CUSTOM STYLING 
+    # PHOTO BLOCK
+    # PARALLAX
+        # PARALLAX CUSTOM SECTIONS
+    # HEROS CUSTOM PAGES
+    # FOOTNOTE TEXT    
+    # START NEW LINE
+    # LOCATION PAGE - DISPLAY INLINE BLOCK DIVS
+
 
 
 -------------------------------------
@@ -60,7 +70,7 @@ CSS TABLE OF CONTENTS
     --color-links-hover: rgb(29, 172, 214);
     --color-links-dark: rgb(29, 172, 214);
     --color-links-darker: rgb(0, 57, 90);
-    --color-links-light: lightblue;
+    --color-links-light: rgb(210, 238, 247);
     --color-links-lighter: rgba(255 255 255);
 
     --color-siteheader-background: transparent;
@@ -72,7 +82,7 @@ CSS TABLE OF CONTENTS
 
     --color-sitefooter-background: rgb(100 100 100);
     --color-sitefooter-text: rgb(255 255 255 / .8);
-    --color-site-footer-headings: rgb(255 255 255 / 1);
+    --color-site-footer-headings: rgb(250, 114, 104);
     --color-sitefooter-links: rgb(255 255 255);
 
     --color-palette-coral: rgb(250, 114, 104);
@@ -184,12 +194,23 @@ h4 {
 }
 
 p {
-    /* LIMIT THE WIDTH OF ALL PARAGRAPHS TO 65 characters. TELL CHRIS this is messing up my hero centering and paragraphs in my card sections */
-    /* max-width: 65ch; */
-
     /* TEXT WRAP TO AVOID WIDOWS AND ORPHANS */
     text-wrap: pretty;
+}
 
+/* FANCY HEADING CUSTOM SPAN FONT */
+.fancy-heading {
+
+    h1 span {
+        display: block;
+        color: var(--color-palette-coral);
+        font-family: var(--font-fancy);
+        font-size: 2.3em;
+        transform: rotate(-7deg);
+        margin-top: -0.2em;
+        margin-bottom: -0.4em;
+    }
+    
 }
 
 /* GLOBAL MEDIA */
@@ -216,11 +237,22 @@ img {
         left: -9999px;
     }
 
-    .centered-mobile {
+    .text-centered-mobile {
         text-align: center;
+    }
+
+
+    /* ATTENTION. I CHANGED FROM A P TO A * BELOW. I COULD ADD THIS HELPER CLASS ON EVERYTHING THAT NEEDS CENTERING ON MOBILE, BUT IS THERE A ROBUST WAY TO DO IT WITHOUT A HELPER CLASS? */
+    .block-centered-mobile {
+        > * {
+        margin-left: auto;
+        margin-right: auto;
+        }
     }
 }
 
+
+/* BORDER RADIUS */
 .top-rounded {
     border-radius: var(--card-border-radius) var(--card-border-radius) 0 0;
 }
@@ -233,8 +265,22 @@ img {
     border-radius: var(--card-border-radius);
 }
 
-.centered {
+/* TEXT CENTERING */
+
+.text-centered {
     text-align: center;
+}
+
+/* START NEW LINE */
+.next-line {
+    display: block;
+}
+
+/* DISPLAY AS INLINE BLOCK ELEMENTS AND ADD GAP */
+.show-inline-block {
+    display: inline-block;
+    gap: var(--gridgap);
+    margin: 0 
 }
 
 
@@ -265,6 +311,17 @@ body {
         font-size: 112.5%;
     }
 }
+
+/* LIMIT CHARACTER WIDTH ON SMALL BROWSERS */
+
+@media (max-width: 767px) {
+    /* LIMIT THE WIDTH OF ALL PARAGRAPHS TO 65 characters. */
+    p {
+        max-width: 65ch;
+    }
+}
+
+
 
 /* CONTAINER */
 .container {
@@ -338,17 +395,18 @@ body {
 
 }
 
-#timeline-sec .row > *{ 
+/* CHANGE MARGIN TO 0 ON ALL CHILDREN OF A ROW - OVERRIDE LINE 304*/
+#timeline-sec .row > * { 
     margin: 0;
 }
 
 /* FOR DEMO PURPOSES */
 
-.demo > * {
+/* .demo > * {
     background-color: #444;
     padding: 1em;
     text-align: center;
-}
+} */
 
 /* ---------------------- */
 /* --- SITE STRUCTURE --- */
@@ -362,7 +420,7 @@ body {
     @media (min-width: 768px) {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        /* align-items: center; */
     }
 
     /* ADD SOME GENERAL SPACING/PADDING AROUND THE HEADER */
@@ -641,33 +699,6 @@ section:nth-child(odd) {
     height: 60vh;
 }
 
-.hero-homepage {
-    background-image: url(../img/KualoaRanch.jpg);
-    background-position: 30%;
-}
-
-.hero-stories {
-    background-image: url(../img/Rocky-Mountain.jpg);
-    background-position: 50% 85%;
-}
-
-.hero-event-day {
-    background-image: url(../img/Hawaii-Meeting-Room-Oahu.jpg);
-    background-position: center;
-
-    h1 {
-        color: var(--color-palette-navy);
-    }
-}
-
-/* why isn't this working? */
-.not-homepage {
-    display: flex;
-    text-align: left;
-    align-items: center;
-    justify-content: left;
-
-}
 
 /* SITE FOOTER */
 .site-footer {
@@ -678,7 +709,15 @@ section:nth-child(odd) {
     padding: var(--unit-small);
 
     h1, h2, h3 {
-        color: var(--color-sitefooter-headings);
+        color: var(--color-site-footer-headings);
+    }
+
+    .button {
+        margin: 0 0 .2em 0;
+    
+        &:hover {
+            border: 2px dashed var(--color-palette-coral);
+        }
     }
 
     .site-footer-nav {
@@ -691,30 +730,21 @@ section:nth-child(odd) {
                 color: var(--color-links-light);
         
                 &:hover {
-                    color: var(--color-links-lighter);
+                    color: var(--color-links-dark);
                 }
             }
         }
     }
 
-    h2 {
-        margin: 0.4em 0 0 0;
-    }
-
-    h3 {
-        margin: 0 0 0.4em 0;
-    }
-
-    p {
-        margin: 0;
-    }
+    h2 {margin: 0.4em 0 0 0;}
+    h3 {margin: 0 0 0.4em 0;}
+    p {margin: 0;}
 
     .row {
         align-items: end;
     }
+
 }
-
-
 
 
 /* ------------------- */
@@ -727,15 +757,13 @@ section:nth-child(odd) {
     /*  SET THE BUTTON COLORS */
     border: 1px solid var(--color-links-dark);
     background-color: var(--color-links-dark);
-    color: white;
+    color: var(--color-links-lighter);
     border-radius: var(--card-border-radius);
     
     /* ENABLE BOX MODEL STYLING  */
     display: inline-block;
     padding: var(--unit-small);
     margin: var(--unit-small) 0;
-    
-
 
     /* TO ADD MARGIN BETWEEN A BUTTON THAT IMMEDIATELY FOLLOWS ANOTHER BUTTON, USING NESTING SYNTAX */
     + .button {
@@ -748,7 +776,7 @@ section:nth-child(odd) {
         border-color: var(--color-links-darker);
     }
 
-/* LIGHT BUTTON VARIANT */
+    /* LIGHT BUTTON VARIANT */
     &.light {
         border-color: var(--color-links-light);
         background-color: var(--color-links-light);
@@ -759,13 +787,11 @@ section:nth-child(odd) {
             background-color: var(--color-links-lighter);
         }
     }
-
-    
 }
 
 /* BUTTONS WITH SPANS */
 .span-button {
-    line-height: 1.5;
+    line-height: 1.3;
 }
     
 .span-button:hover .span-button-icon{
@@ -780,24 +806,16 @@ section:nth-child(odd) {
     font-weight: bold;
 }
 
-.site-footer .button {
-    margin: 0 0 .2em 0;
-    
-    &:hover {
-        border: 2px dashed var(--color-palette-coral);
-    }
+.span-button-subtext {
+    font-size: 87.5%;
 }
 
 .span-button-icon svg {
     margin-bottom: -3px;
 }
 
-.span-button-subtext {
-    font-size: 90%;
-}
 
-
-/* ALL CARDS */
+/* CARDS */
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -830,7 +848,6 @@ section:nth-child(odd) {
     transform-style: preserve-3d;
 }
   
-
 .flip-card[data-flipstate="flipped"] .flip-card-inner {
     transform: rotateY(180deg);
 }
@@ -865,7 +882,6 @@ section:nth-child(odd) {
         color: white;
         padding: 1em 1em 1.3em 1em;
     }
-
 }
   
 .backside-content * {
@@ -947,7 +963,6 @@ section:nth-child(odd) {
         height: 300px;
         object-fit: cover;
     }
-    
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -961,47 +976,62 @@ section:nth-child(odd) {
     background-color: rgb(255, 255, 255);
 }
 
+
+
 /* TIMELINE */
+
+
 .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
 }
-  
+
 /* VERTICAL LINE */
-.timeline::after { /* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE LINE THE LAST CHILD OF .TIMELINE */
+
+.timeline::after { 
+    /* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE LINE THE LAST CHILD OF .TIMELINE */
     content: '';
     position: absolute;
     width: 12px;
-    background-color: var(--pseudo-element-color-coral);
+    background-color: var(--color-palette-coral);
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -5px; /* ROUGHLY HALF OF WIDTH ABOVE. THIS WILL ALWAYS BE SLIGHTLY OFF BECAUSE OF THE WAY THE CONTAINERS ARE OFFSET. TO SEE WHAT I MEAN, ADD A 1px GREEN BORDER TO .CONTAINER */
+    /* ROUGHLY HALF OF WIDTH ABOVE. THIS WILL ALWAYS BE SLIGHTLY OFF BECAUSE OF THE WAY THE CONTAINERS ARE OFFSET. TO SEE WHAT I MEAN, ADD A 1px GREEN BORDER TO .CONTAINER */
+    margin-left: -5px; 
 }
 
   
 /* CONTAINER AROUND EACH CONTENT RECTANGLE */
 .timeline-container {
-    padding: 10px 39px; /* CHOOSE YOUR OWN PADDING. I CHOSE A VALUE THAT MAKES THE POINTING ARROWS TOUCH THE CONTENT BOX */
+    /* CHOOSE YOUR OWN PADDING. I CHOSE A VALUE THAT MAKES THE POINTING ARROWS TOUCH THE CONTENT BOX */
+    padding: 10px 39px; 
     position: relative;
-    background-color: inherit; /* THE INHERIT PROPERTY WILL MAKE SURE THAT THE .CONTAINER BACKGROUND COLOR ALWAYS MATCHES BODY BACKGROUND COLOR. THEN AGAIN, COULDN'T WE ALWAYS JUST NOT ADD A .CONTAINER BACKGROUND COLOR AT ALL? ASK CHRIS. */
+    /* THE INHERIT PROPERTY WILL MAKE SURE THAT THE .CONTAINER BACKGROUND COLOR ALWAYS MATCHES BODY BACKGROUND COLOR. THEN AGAIN, COULDN'T WE ALWAYS JUST NOT ADD A .CONTAINER BACKGROUND COLOR AT ALL? ASK CHRIS. */
+    background-color: inherit; 
     width: 50%;
 }
   
 /* CIRCLES ON VERTICAL LINE */
-.timeline-container::after { /* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE CIRCLES THE LAST CHILD OF .CONTAINER */
+
+/* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE CIRCLES THE LAST CHILD OF .CONTAINER */
+.timeline-container::after { 
     content: '';
     position: absolute;
-    width: 25px; /* WIDTH OF CIRCLE */
-    height: 25px; /* HEIGHT OF CIRCLE */
-    right: -17px; /* POSITIONS EVERY ODD NUMBERED 
-    CIRCLE 17px FARTHER RIGHT  */
-    background-color: var(--pseudo-element-color-white);
-    border: 4px solid var(--pseudo-element-color-coral);
-    top: 15px; /* POSITIONS CIRCLES 15px BELOW TOP EDGE OF CONTAINER BOX */
+    /* WIDTH OF CIRCLE */
+    width: 25px; 
+    /* HEIGHT OF CIRCLE */
+    height: 25px; 
+    /* POSITIONS EVERY ODD NUMBERED CIRCLE 17px FARTHER RIGHT  */
+    right: -17px; 
+    background-color: var(--color-siteheader-links);
+    border: 4px solid var(--color-palette-coral);
+    /* POSITIONS CIRCLES 15px BELOW TOP EDGE OF CONTAINER BOX */
+    top: 15px; 
     border-radius: 50%;
-    z-index: 100; /* ARRANGES FOR CIRCLES TO STACK ON TOP OF THE LINE */
+    /* ARRANGES FOR CIRCLES TO STACK ON TOP OF THE LINE */
+    z-index: 100; 
 }
   
 .timeline-right::after {
@@ -1019,7 +1049,9 @@ section:nth-child(odd) {
 }
   
 /* LEFT CONTAINER ARROWS POINTING RIGHT */
-.timeline-left::before { /* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE ARROW THE FIRST CHILD OF .LEFT */
+
+/* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE ARROW THE FIRST CHILD OF .LEFT */
+.timeline-left::before { 
     content: " ";
     height: 0;
     position: absolute;
@@ -1029,14 +1061,16 @@ section:nth-child(odd) {
     right: 30px;
     border: medium solid white;
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent var(--pseudo-element-color-lightblue);
+    border-color: transparent transparent transparent var(--color-palette-lightblue);
     animation: expand-appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
 }
   
 /* RIGHT CONTAINER ARROWS POINTING LEFT */
-.timeline-right::before { /* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE ARROW THE FIRST CHILD OF .RIGHT */
+
+/* THIS CREATES A PSEUDO ELEMENT THAT MAKES THE ARROW THE FIRST CHILD OF .RIGHT */
+.timeline-right::before { 
     content: " ";
     height: 0;
     position: absolute;
@@ -1046,7 +1080,7 @@ section:nth-child(odd) {
     left: 30px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
-    border-color: transparent var(--pseudo-element-color-lightblue) transparent transparent;
+    border-color: transparent var(--color-palette-lightblue) transparent transparent;
     animation: expand-appear linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
@@ -1055,7 +1089,7 @@ section:nth-child(odd) {
 /* CUSTOMIZING THE ACTUAL CONTENT BOX */
 .timeline-content-box {
     padding: 20px 30px;
-    background-color: var(--pseudo-element-color-lightblue);
+    background-color: var(--color-palette-lightblue);
     position: relative;
     border-radius: var(--card-border-radius);
 }
@@ -1078,7 +1112,7 @@ section:nth-child(odd) {
         left: 60px;
         border: medium solid red;
         border-width: 10px 10px 10px 0;
-        border-color: transparent var(--pseudo-element-color-lightblue) transparent transparent;
+        border-color: transparent var(--color-palette-lightblue) transparent transparent;
     }
 
     .timeline-left::after, .timeline-right::after {
@@ -1126,7 +1160,7 @@ html {
     }
 }
 
-/* EXPAND ON SCROLL */
+/* ONSCROLL TRIGGERED EXPAND */
 .expand {
     animation: expand-appear linear;
     animation-timeline: view();
@@ -1145,9 +1179,9 @@ html {
 }
 
 
-/* --------------- */
+/* -------------------- */
 /* -- CUSTOM STYLING -- */
-/* --------------- */
+/* -------------------- */
 
 
 /* PHOTO BLOCK */
@@ -1216,22 +1250,6 @@ html {
 }
 
 
-/* FANCY ANNOUNCEMENT CUSTOM SPAN FONT */
-.fancy-announce {
-
-    h1 span {
-        display: block;
-        color: var(--color-palette-coral);
-        font-family: var(--font-fancy);
-        font-size: 2.3em;
-        transform: rotate(-7deg);
-        margin-top: -0.2em;
-        margin-bottom: -0.4em;
-    }
-    
-}
-
-
 @media (min-width: 768px) {
     .col-split {
         column-span: all;
@@ -1239,7 +1257,27 @@ html {
     }
 }
 
-/* TINY PARAGRAPH FONT */
+/* CUSTOM HEROS ON OTHER PAGES */
+.hero-homepage {
+    background-image: url(../img/KualoaRanch.jpg);
+    background-position: 30%;
+}
+
+.hero-stories {
+    background-image: url(../img/Rocky-Mountain.jpg);
+    background-position: 50% 85%;
+}
+
+.hero-event-day {
+    background-image: url(../img/Hawaii-Meeting-Room-Oahu.jpg);
+    background-position: center;
+
+    h1 {
+        color: var(--color-text-headings);
+    }
+}
+
+/* FOOTNOTE TEXT */
 #timeline-sec {
     p span {
         display: block;
@@ -1249,16 +1287,19 @@ html {
     }
 }
 
-/* START NEXT LINE OF A PARAGRAPH */
-.next-line {
-    display: block;
+
+/*  */
+#address-line {
+    div + div {
+        margin-left: var(--unit-small);
+    }
 }
+
 
 
 /* to dos
 
 
-ask Chris why my helper classes .centered and .centered-mobile work using text-align: center, and not margin: 0 auto;
 button animation in mobile state ok?
 ok to keep animations in mobile?
 
@@ -1278,4 +1319,7 @@ fix simplebase and change data navstate to closed
 my bottom of homepage pictures are their actual size. How do I set the size? photoshop
 javascript click to reveal on transparent cards only working on first card
 ask Chris how to vertical center my footer items - he didn't recommend this. Instead design it to look nice. Try rearranging pieces in photoshop.
+ask Chris why my helper classes .text-centered and .centered-mobile work using text-align: center, and not margin: 0 auto; I learned the answer on my own. It's not the same thing. margin auto still keeps it left-justified, whereas text-align center does not. and margin auto only works on block level elements that are set to display as block.
 */
+
+
