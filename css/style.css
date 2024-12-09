@@ -45,8 +45,6 @@ CSS TABLE OF CONTENTS
     # HEROS CUSTOM PAGES
     # TIMELINE FOOTNOTE TEXT    
     # LOCATION PAGE
-        # DISPLAY BLOCK ELEMENTS SIDE-BY-SIDE ON MOBILE
-        # ADD MARGIN BETWEEN ADJACENT, INLINE DIVS
         # DISPLAY DRIVING DIRECTIONS SVGS AS BLOCK
 
 
@@ -270,6 +268,14 @@ img {
     display: block;
 }
 
+/* FLOAT IMAGE RIGHT */
+@media (min-width: 768px) {
+
+    .float-right img {
+        float: right;
+    }   
+}
+
 
 /* --------------------- */
 /* -------LAYOUT-------- */
@@ -302,8 +308,8 @@ body {
 /* LIMIT CHARACTER WIDTH ON SMALL BROWSERS */
 
 @media (max-width: 767px) {
-    /* LIMIT THE WIDTH OF ALL PARAGRAPHS TO 65 characters. */
-    h4, p {
+    /* LIMIT THE WIDTH TO 65 characters. */
+    h3, h4, p {
         max-width: 65ch;
     }
 
@@ -313,7 +319,6 @@ body {
         max-width: none;
     }
 }
-
 
 
 /* CONTAINER */
@@ -729,6 +734,7 @@ section:nth-child(odd) {
         }
     }
 
+    /* OVERRIDE OTHER MARGIN SETTINGS SO I CAN ALIGN FOOTER ITEMS */
     h2 {margin: 0.4em 0 0 0;}
     h3 {margin: 0 0 0.4em 0;}
     p {margin: 0;}
@@ -777,7 +783,7 @@ section:nth-child(odd) {
 
         &:hover {
             border-color: var(--color-links-lighter);
-            background-color: var(--color-links-lighter);
+            background-color: var(--color-palette-coral);
         }
     }
 }
@@ -1284,22 +1290,17 @@ html {
     }
 }
 
+/* LOCATION PAGE */
 
-/*  */
-
-/* DISPLAY ADDRESS BLOCK AND GOOGLE MAPS BUTTON AS INLINE BLOCK ELEMENTS ON MOBILE*/
-@media (min-width: 768px) {
-    .show-inline-block {
-        display: inline-block;
+/* CENTER SIDE-BY-SIDE BUTTONS ON MOBILE */
+@media (max-width: 767px) {
+    .location > * {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
 }
 
-/* ADD MARGIN BETWEEN ADJACENT, INLINE DIVS */
-#address-line {
-    div + div {
-        margin-left: var(--unit-small);
-    }
-}
 
 /* DISPLAY SVGS AS BLOCK */
 #driving-directions svg {
@@ -1309,9 +1310,11 @@ html {
 }
 
 
-
 /* to dos
 
+ask Chris why my "Directions" header won't center even when I set h3 max width to 65 characters, and the parent has auto margins on (with a helper class)
+ask Chris how to make my invitations align to the right side
+what's the robust way to re-center a block level item when a max width has been set, like with the character count?
 
 button animation in mobile state ok?
 ok to keep animations in mobile?
@@ -1335,15 +1338,24 @@ ask Chris how to vertical center my footer items - he didn't recommend this. Ins
 ask Chris why my helper classes .text-centered and .centered-mobile work using text-align: center, and not margin: 0 auto; I learned the answer on my own. It's not the same thing. margin auto still keeps it left-justified, whereas text-align center does not. and margin auto only works on block level elements that are set to display as block.
 */
 
-#location-sec .row > *{
-    border: 1px solid red;
+/* #location-sec .row > *{ */
+    /* row */
+    /* border: 1px solid red; */
 
-    > * {
-        border: 1px solid green;
+    /* column */
+    /* > * {
+        border: 1px solid green; */
 
-        > * {
+        /* direct child of column */
+        /* > * {
             border: 1px solid greenyellow;
         }
     }
  
+} */
+
+.width-test {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
 }
