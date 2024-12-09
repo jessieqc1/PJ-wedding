@@ -43,9 +43,11 @@ CSS TABLE OF CONTENTS
     # PARALLAX
         # PARALLAX CUSTOM SECTIONS
     # HEROS CUSTOM PAGES
-    # FOOTNOTE TEXT    
-    # START NEW LINE
-    # LOCATION PAGE - DISPLAY INLINE BLOCK DIVS
+    # TIMELINE FOOTNOTE TEXT    
+    # LOCATION PAGE
+        # DISPLAY BLOCK ELEMENTS SIDE-BY-SIDE ON MOBILE
+        # ADD MARGIN BETWEEN ADJACENT, INLINE DIVS
+        # DISPLAY DRIVING DIRECTIONS SVGS AS BLOCK
 
 
 
@@ -106,13 +108,6 @@ CSS TABLE OF CONTENTS
     --info-card-height: 400px;
     --basic-card-width: 400px;
     --card-border-radius: 10px;
-
-    /* TIMELINE */
-    --pseudo-element-color-white: rgb(255, 255, 255);
-    --pseudo-element-color-coral: rgb(250, 114, 104);
-    --pseudo-element-color-lightblue: rgb(210, 238, 247);
-   
-
 }
 
 /* GLOBAL RESET */
@@ -135,7 +130,7 @@ body {
 }
 
 /* SET THE COLOR OF ALL THE HEADINGS H1-etc */
-h1, h2, h3 {
+h1, h2, h3, h4 {
     color: var(--color-text-headings);
 }
 
@@ -242,7 +237,7 @@ img {
     }
 
 
-    /* ATTENTION. I CHANGED FROM A P TO A * BELOW. I COULD ADD THIS HELPER CLASS ON EVERYTHING THAT NEEDS CENTERING ON MOBILE, BUT IS THERE A ROBUST WAY TO DO IT WITHOUT A HELPER CLASS? */
+    /* ATTENTION CHRIS. I CHANGED FROM A P TO A * BELOW. I COULD ADD THIS HELPER CLASS ON EVERYTHING THAT NEEDS CENTERING ON MOBILE, BUT IS THERE A ROBUST WAY TO DO IT WITHOUT A HELPER CLASS? */
     .block-centered-mobile {
         > * {
         margin-left: auto;
@@ -250,7 +245,6 @@ img {
         }
     }
 }
-
 
 /* BORDER RADIUS */
 .top-rounded {
@@ -274,13 +268,6 @@ img {
 /* START NEW LINE */
 .next-line {
     display: block;
-}
-
-/* DISPLAY AS INLINE BLOCK ELEMENTS AND ADD GAP */
-.show-inline-block {
-    display: inline-block;
-    gap: var(--gridgap);
-    margin: 0 
 }
 
 
@@ -316,8 +303,14 @@ body {
 
 @media (max-width: 767px) {
     /* LIMIT THE WIDTH OF ALL PARAGRAPHS TO 65 characters. */
-    p {
+    h4, p {
         max-width: 65ch;
+    }
+
+
+    /* EXCEPTION FOR THE ADDRESS IN THE SITE-FOOTER */
+    .site-footer p {
+        max-width: none;
     }
 }
 
@@ -985,6 +978,10 @@ section:nth-child(odd) {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
+
+    h4 {
+        font-weight: 500;
+    }
 }
 
 /* VERTICAL LINE */
@@ -1277,7 +1274,7 @@ html {
     }
 }
 
-/* FOOTNOTE TEXT */
+/* TIMELINE FOOTNOTE TEXT */
 #timeline-sec {
     p span {
         display: block;
@@ -1289,10 +1286,26 @@ html {
 
 
 /*  */
+
+/* DISPLAY ADDRESS BLOCK AND GOOGLE MAPS BUTTON AS INLINE BLOCK ELEMENTS ON MOBILE*/
+@media (min-width: 768px) {
+    .show-inline-block {
+        display: inline-block;
+    }
+}
+
+/* ADD MARGIN BETWEEN ADJACENT, INLINE DIVS */
 #address-line {
     div + div {
         margin-left: var(--unit-small);
     }
+}
+
+/* DISPLAY SVGS AS BLOCK */
+#driving-directions svg {
+    color: var(--color-palette-coral);
+    display: block;
+    margin-bottom: 0.6em;
 }
 
 
@@ -1322,4 +1335,15 @@ ask Chris how to vertical center my footer items - he didn't recommend this. Ins
 ask Chris why my helper classes .text-centered and .centered-mobile work using text-align: center, and not margin: 0 auto; I learned the answer on my own. It's not the same thing. margin auto still keeps it left-justified, whereas text-align center does not. and margin auto only works on block level elements that are set to display as block.
 */
 
+#location-sec .row > *{
+    border: 1px solid red;
 
+    > * {
+        border: 1px solid green;
+
+        > * {
+            border: 1px solid greenyellow;
+        }
+    }
+ 
+}
