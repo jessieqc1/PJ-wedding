@@ -677,6 +677,7 @@ section:nth-child(odd) {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     h1 {
         font-size: 4em;
@@ -687,6 +688,36 @@ section:nth-child(odd) {
         color: var(--color-hero-headings);
     }
 
+}
+
+.bg-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* CHANGE Z-INDEX ON THESE ITEMS TO MAKE SURE THEY SIT ON TOP OF THE HEADER VIDEO */
+.hero .container {
+    z-index: 2;
+}
+
+.site-header-nav {
+    z-index: 2;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .bg-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .bg-video {
+        width: auto;
+        height: 100%;
+    }
 }
 
 .hero-full {
@@ -1236,22 +1267,21 @@ html {
     background-image: url(../img/Koolau-range.jpg);
 }
 
-#parallax-event-day {
-    background-image: url(../img/Molokai-beach.jpg);
-}
-
 #parallax-stories1 {
-    background-image: url(../img/Rocky-Mountain.jpg);
+    background-image: url(../img/Diamond-Head.jpg);
 }
 
 #parallax-stories2 {
-    background-image: url(../img/Rocky-Mountain.jpg);
+    background-image: url(../img/Molokai-beach.jpg);
 }
 
 #parallax-stories3 {
-    background-image: url(../img/Rocky-Mountain.jpg);
+    background-image: url(../img/Pumpkin-patch.jpg);
 }
 
+#parallax-event-day {
+    background-image: url(../img/Diamond-Head.jpg);
+}
 
 @media (min-width: 768px) {
     .col-split {
@@ -1261,10 +1291,10 @@ html {
 }
 
 /* CUSTOM HEROS ON OTHER PAGES */
-.hero-homepage {
+/* .hero-homepage {
     background-image: url(../img/KualoaRanch.jpg);
     background-position: 30%;
-}
+} */
 
 .hero-stories {
     background-image: url(../img/Rocky-Mountain.jpg);
