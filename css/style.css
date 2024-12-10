@@ -1343,12 +1343,13 @@ html {
 /* to dos
 
 ask Chris why my "Directions" header won't center even when I set h3 max width to 65 characters, and the parent has auto margins on (with a helper class)
-ask Chris how to make my invitations align to the right side
+
 what's the robust way to re-center a block level item when a max width has been set, like with the character count?
 
 button animation in mobile state ok?
 ok to keep animations in mobile?
 
+on mobile, how do I make sure me and Paul are still in frame in the hero video?
 
 done
 add helper class for top, bottom, and all rounded border radius
@@ -1366,6 +1367,7 @@ my bottom of homepage pictures are their actual size. How do I set the size? pho
 javascript click to reveal on transparent cards only working on first card
 ask Chris how to vertical center my footer items - he didn't recommend this. Instead design it to look nice. Try rearranging pieces in photoshop.
 ask Chris why my helper classes .text-centered and .centered-mobile work using text-align: center, and not margin: 0 auto; I learned the answer on my own. It's not the same thing. margin auto still keeps it left-justified, whereas text-align center does not. and margin auto only works on block level elements that are set to display as block.
+ask Chris how to make my invitations align to the right side - figured out how to use float
 */
 
 /* #location-sec .row > *{ */
