@@ -234,12 +234,11 @@ img {
         text-align: center;
     }
 
-
-    /* ATTENTION CHRIS. I CHANGED FROM A P TO A * BELOW. I COULD ADD THIS HELPER CLASS ON EVERYTHING THAT NEEDS CENTERING ON MOBILE, BUT IS THERE A ROBUST WAY TO DO IT WITHOUT A HELPER CLASS? */
     .block-centered-mobile {
         > * {
         margin-left: auto;
         margin-right: auto;
+        max-width: 500px;
         }
     }
 }
@@ -308,15 +307,14 @@ body {
 /* LIMIT CHARACTER WIDTH ON SMALL BROWSERS */
 
 @media (max-width: 767px) {
-    /* LIMIT THE WIDTH TO 65 characters. */
-    h3, h4, p {
-        max-width: 65ch;
-    }
-
+  
+/* ask Chris why this is necessary. why isn't the helper class block-centered-mobile working? */
 
     /* EXCEPTION FOR THE ADDRESS IN THE SITE-FOOTER */
-    .site-footer p {
-        max-width: none;
+    .site-footer {
+        h3, p {
+            max-width: none;
+        }
     }
 }
 
@@ -695,6 +693,10 @@ section:nth-child(odd) {
     right: 0;
     bottom: 0;
     z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 30% 35%;
 }
 
 /* CHANGE Z-INDEX ON THESE ITEMS TO MAKE SURE THEY SIT ON TOP OF THE HEADER VIDEO */
@@ -703,21 +705,7 @@ section:nth-child(odd) {
 }
 
 .site-header-nav {
-    z-index: 2;
-}
-
-@media (min-aspect-ratio: 16/9) {
-    .bg-video {
-        width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-aspect-ratio: 16/9) {
-    .bg-video {
-        width: auto;
-        height: 100%;
-    }
+    z-index: 3;
 }
 
 .hero-full {
@@ -1267,8 +1255,12 @@ html {
     background-image: url(../img/Koolau-range.jpg);
 }
 
+
+/* ask Chris how to more center this image */
 #parallax-stories1 {
-    background-image: url(../img/Diamond-Head.jpg);
+    background-image: url(../img/Dino-attack.jpg);
+    object-fit: cover;
+    object-position: 50% 0%;
 }
 
 #parallax-stories2 {
@@ -1280,7 +1272,11 @@ html {
 }
 
 #parallax-event-day {
-    background-image: url(../img/Diamond-Head.jpg);
+    background-image: url(../img/KualoaRanch.jpg);
+}
+
+#parallax-filler {
+    background-image: url(../img/Sequoia-tree.jpg);
 }
 
 @media (min-width: 768px) {
@@ -1342,14 +1338,12 @@ html {
 
 /* to dos
 
-ask Chris why my "Directions" header won't center even when I set h3 max width to 65 characters, and the parent has auto margins on (with a helper class)
 
-what's the robust way to re-center a block level item when a max width has been set, like with the character count?
 
 button animation in mobile state ok?
 ok to keep animations in mobile?
 
-on mobile, how do I make sure me and Paul are still in frame in the hero video?
+
 
 done
 add helper class for top, bottom, and all rounded border radius
@@ -1368,6 +1362,9 @@ javascript click to reveal on transparent cards only working on first card
 ask Chris how to vertical center my footer items - he didn't recommend this. Instead design it to look nice. Try rearranging pieces in photoshop.
 ask Chris why my helper classes .text-centered and .centered-mobile work using text-align: center, and not margin: 0 auto; I learned the answer on my own. It's not the same thing. margin auto still keeps it left-justified, whereas text-align center does not. and margin auto only works on block level elements that are set to display as block.
 ask Chris how to make my invitations align to the right side - figured out how to use float
+what's the robust way to re-center a block level item when a max width has been set, like with the character count? - the way I'm doing it with helper class block-centered-mobile is fine
+on mobile, how do I make sure me and Paul are still in frame in the hero video? - use object-fit: cover and object-position
+
 */
 
 /* #location-sec .row > *{ */
@@ -1385,9 +1382,3 @@ ask Chris how to make my invitations align to the right side - figured out how t
     }
  
 } */
-
-.width-test {
-    max-width: 65ch;
-    margin-left: auto;
-    margin-right: auto;
-}
