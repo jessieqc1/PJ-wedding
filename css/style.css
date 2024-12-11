@@ -923,7 +923,7 @@ section:nth-child(odd) {
 }
   
 .transparent-card-image {
-    opacity: 0.3;
+    opacity: 1;
     display: block;
     width: 100%;
     height: auto;
@@ -965,6 +965,16 @@ section:nth-child(odd) {
 
 .trigger.show .hideaway {
     display: block;
+}
+
+/* TRANDPARENT CARD HEADING */
+.transparent-card h4 {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    text-align: center;
+    color: var(--color-palette-navy);
+    padding: 1em;
 }
 
 /* BASIC CARDS */
@@ -1258,7 +1268,7 @@ html {
 
 /* ask Chris how to more center this image */
 #parallax-stories1 {
-    background-image: url(../img/Dino-attack.jpg);
+    background-image: url(../img/Paul_patio.jpg);
     object-fit: cover;
     object-position: 50% 0%;
 }
@@ -1273,6 +1283,10 @@ html {
 
 #parallax-event-day {
     background-image: url(../img/KualoaRanch.jpg);
+}
+
+#parallax-lodging {
+    background-image: url(../img/Turtle-Bay.jpg);
 }
 
 #parallax-filler {
@@ -1304,6 +1318,11 @@ html {
     h1 {
         color: var(--color-text-headings);
     }
+}
+
+.hero-lodging {
+    background-image: url("https://cache.marriott.com/is/image/marriotts7prod/mc-hnlmc-hotel-view-rainbow01-23553:Wide-Hor?wid=2880&fit=constrain");
+    background-position: center;
 }
 
 /* TIMELINE FOOTNOTE TEXT */
