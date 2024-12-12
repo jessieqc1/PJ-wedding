@@ -256,6 +256,10 @@ img {
     border-radius: var(--card-border-radius);
 }
 
+.rounded-circle img {
+    border-radius: 50%;
+}
+
 /* TEXT CENTERING */
 
 .text-centered {
@@ -813,10 +817,14 @@ section:nth-child(odd) {
 }
     
 .span-button:hover .span-button-icon{
-    transition: 0.4s;
+    transition: 0.6s;
     display: inline-block;
     transform: translateX(10px);
     color: var(--color-palette-cerulean);
+}
+
+.light.span-button:hover .span-button-icon{
+    color: white;
 }
 
 .span-button-text {
@@ -1256,7 +1264,7 @@ html {
     background-attachment: fixed;
     background-position: center;
 
-    h1 {
+    h1, p {
         color: var(--color-links-lighter);
     }
 }
@@ -1265,8 +1273,6 @@ html {
     background-image: url(../img/Koolau-range.jpg);
 }
 
-
-/* ask Chris how to more center this image */
 #parallax-stories1 {
     background-image: url(../img/Paul_patio.jpg);
     object-fit: cover;
@@ -1282,15 +1288,23 @@ html {
 }
 
 #parallax-event-day {
-    background-image: url(../img/KualoaRanch.jpg);
+    background-image: url(../img/Koolau-range.jpg);
 }
 
 #parallax-lodging {
     background-image: url(../img/Turtle-Bay.jpg);
 }
 
+#parallax-transport {
+    background-image: url(../img/Koolau-range.jpg);
+}
+
 #parallax-filler {
     background-image: url(../img/Sequoia-tree.jpg);
+}
+
+#parallax-beaches {
+    background-image: url(../img/Kailua.jpg);
 }
 
 @media (min-width: 768px) {
@@ -1306,12 +1320,12 @@ html {
     background-position: 30%;
 } */
 
-.hero-stories {
+#hero-stories {
     background-image: url(../img/Rocky-Mountain.jpg);
     background-position: 50% 85%;
 }
 
-.hero-event-day {
+#hero-event-day {
     background-image: url(../img/Hawaii-Meeting-Room-Oahu.jpg);
     background-position: center;
 
@@ -1320,9 +1334,25 @@ html {
     }
 }
 
-.hero-lodging {
+#hero-lodging {
     background-image: url("https://cache.marriott.com/is/image/marriotts7prod/mc-hnlmc-hotel-view-rainbow01-23553:Wide-Hor?wid=2880&fit=constrain");
     background-position: center;
+}
+
+#hero-transport {
+    /* background-image: url("https://www.discounthawaiicarrental.com/wp-content/uploads/2020/09/final_home_hero_bright.jpg"); */
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/TheBus_%28Honolulu%29_20160604_132644.jpg/1600px-TheBus_%28Honolulu%29_20160604_132644.jpg");
+    background-position: 50% 20%;
+}
+
+#hero-activities {
+    background-image: url(../img/Dino-attack.jpg);
+    background-position: 50% 65%;
+}
+
+#hero-questions {
+    background-image: url(../img/Janet-Jackson-concert.jpg);
+    background-position: 50% 65%;
 }
 
 /* TIMELINE FOOTNOTE TEXT */
@@ -1338,17 +1368,17 @@ html {
 /* LOCATION PAGE */
 
 /* CENTER SIDE-BY-SIDE BUTTONS ON MOBILE */
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .location > * {
         margin-left: auto;
         margin-right: auto;
         display: block;
     }
-}
+} */
 
 
 /* DISPLAY SVGS AS BLOCK */
-#driving-directions svg {
+.svg-block svg {
     color: var(--color-palette-coral);
     display: block;
     margin-bottom: 0.6em;
@@ -1401,3 +1431,8 @@ on mobile, how do I make sure me and Paul are still in frame in the hero video? 
     }
  
 } */
+
+
+#beaches-etc h1 {
+    margin-top: 0;
+}
