@@ -76,5 +76,10 @@ myTransparentCards.forEach((el) => {
 
  }
 
-  
+});
+
+var video = document.getElementById('myVideo');
+video.addEventListener('ended', function() {
+  video.currentTime = 2.2
+  video.pause();
 });
