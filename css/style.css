@@ -266,6 +266,7 @@ img {
 .text-centered {
     text-align: center;
 }
+    
 
 /* START NEW LINE */
 .next-line {
@@ -782,10 +783,11 @@ section:nth-child(odd) {
     background-color: var(--color-links-dark);
     color: var(--color-links-lighter);
     border-radius: var(--card-border-radius);
+    text-align: left;
     
     /* ENABLE BOX MODEL STYLING  */
     display: inline-block;
-    padding: var(--unit-small);
+    padding: var(--unit-small) var(--unit-medium);
     margin: var(--unit-small) 0;
 
     /* TO ADD MARGIN BETWEEN A BUTTON THAT IMMEDIATELY FOLLOWS ANOTHER BUTTON, USING NESTING SYNTAX */
@@ -1447,4 +1449,56 @@ on mobile, how do I make sure me and Paul are still in frame in the hero video? 
 
 #beaches-etc h1 {
     margin-top: 0;
+}
+
+/* ol li:not(:last-child) {
+    margin-bottom: 7px;
+} */
+
+.custom-bullet {
+    margin-left: 0;
+    list-style: none;
+    counter-reset: counter;
+    
+  
+    > li:before {
+      counter-increment: counter;
+      content: counter(counter);
+    }
+}
+
+.custom-bullet--d {
+    > li {
+        position: relative;
+        left: 0;
+        margin-bottom: .75em;
+        padding-left: 1.25em;
+        padding-right: .75em;
+        background-color: var(--color-palette-lightblue);
+        
+        &,
+        &:before {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        }
+        
+        
+        &:before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -1.5em;
+        display: inline-block;
+        width: 1.8em;
+        text-align: center;
+        color: white;
+        background-color: var(--color-palette-navy);
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10;
+        }
+
+        &:last-child {
+        margin-bottom: 0;
+        }
+    }
 }
