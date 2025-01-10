@@ -1276,7 +1276,7 @@ html {
             display: block;
             color: var(--color-palette-lightblue);
             font-family: var(--font-fancy);
-            font-size: 2.5em;
+            font-size: 2.6em;
             transform: rotate(-5deg);
             margin-top: -0.5em;
             position: absolute;
@@ -1320,6 +1320,16 @@ html {
 
 #parallax-lodging {
     background-image: url(../img/Turtle-Bay.jpg);
+
+    @media (max-width: 767px) {
+        .fancy-parallax-span {
+
+            h1 span {
+            line-height: 0.4em;
+            margin-top: -0.1em;
+            }   
+        }
+    }
 }
 
 #parallax-transport {
@@ -1369,6 +1379,7 @@ html {
 #hero-transport {
     /* background-image: url("https://www.discounthawaiicarrental.com/wp-content/uploads/2020/09/final_home_hero_bright.jpg"); */
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/TheBus_%28Honolulu%29_20160604_132644.jpg/1600px-TheBus_%28Honolulu%29_20160604_132644.jpg");
+    background-size: cover;
     background-position: 50% 20%;
 }
 
@@ -1380,6 +1391,11 @@ html {
 #hero-questions {
     background-image: url(../img/Janet-Jackson-concert.jpg);
     background-position: 50% 65%;
+}
+
+/* CUSTOM BACKGROUNDS ON OTHER PAGES */
+#hotel-block {
+    background: linear-gradient(rgba(255 255 255 / 0.8), rgba(255 255 255 / 0.8)), url("https://digital.ihg.com/is/image/ihg/holiday-inn-express-honolulu-4682085618-4x3");
 }
 
 /* TIMELINE FOOTNOTE TEXT */
@@ -1514,4 +1530,8 @@ on mobile, how do I make sure me and Paul are still in frame in the hero video? 
         margin-bottom: 0;
         }
     }
+}
+
+.overflow-wrap {
+    overflow-wrap: break-word;
 }
