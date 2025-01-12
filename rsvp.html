@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul and Jessie</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- MAIN CSS FILE -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+ 
+    <header class="site-header on-top-of-hero">
+        <div class="site-logo">
+            <a href="index.html">
+                <img src="img/PJ-coral-logo.png" alt="watercolor coral logo" width="65" height="65">
+            </a>
+            <h1 class="hide-visuallyx"><a href="index.html">P&J</a></h1>
+        </div>
+        <nav class="site-header-nav toggle-menu" data-menustate="closed">
+            <button class="site-menu-button">
+                <span class="hide-visuallyx">Menu</span>
+                <svg class="simple-navicon" width="24" height="21">
+                    <rect class="simple-navicon-top" x="0" y="2" height="3" width="24"></rect>
+                    <rect class="simple-navicon-middle" x="0" y="9" height="3" width="24"></rect>
+                    <rect class="simple-navicon-bottom" x="0" y="16" height="3" width="24"></rect>
+                </svg>
+            </button>
+            <ul class="site-menu">
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="event-day.html">Event Day</a></li>
+                <li><a href="lodging.html">Lodging</a></li>
+                <li><a href="transport.html">Transport</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="questions.html">Q&A</a></li>
+                <li><a href="index.html#registry-sec">Registry</a></li>
+                <li><a href="#">RSVP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="site-main">
+
+        <section class="hero hero-sixty" id="hero-questions">
+            <div class="container">
+                <h1>RSVP</h1>
+            </div>
+
+        </section>
+
+        <section id="contact">
+            <div class="container formdiv">
+                <h3>RSVP</h3>
+
+                <form>
+                    <input type="text" placeholder="First Name" id="contact_name" name="contact_first_name" aria-label="contact_first_name" required> 
+
+                    <input type="text" placeholder="Last Name" id="contact_name" name="contact_last_name" aria-label="contact_last_name" required>
+                    
+                    <input type="email" placeholder="Email" id="contact_email" name="contact_email" aria-label="contact_email" required>
+
+                    <label for="party_size">How many people are you RSVPing for? Include only yourself, married spouse or domestic partner (if invited), and children under 18.</label>
+                    <input type="number" placeholder="e.g., 3" id="party_size" aria-label="party_size" min="1" required>
+
+                    <p>Are you attending the ceremony?</p>
+
+                    <input type="radio" id="html" name="ceremony" value="xxx">
+                    <label for="xxx">Yes</label>
+                    
+                    <input type="radio" id="css" name="ceremony" value="xxx">
+                    <label for="xxx">No</label><br>
+
+                    <p>Are you attending the reception?</p>
+
+                    <input type="radio" id="html" name="reception" value="xxx">
+                    <label for="xxx">Yes</label>
+                    
+                    <input type="radio" id="css" name="reception" value="xxx">
+                    <label for="xxx">No</label><br>
+
+                    <textarea id="food_allergies" placeholder="Please describe any food allergies that your party has." name="food_allergies" aria-label="food_allergies"></textarea>
+
+                    <textarea id="music" placeholder="What kind of music gets you dancing?" aria-label="music"></textarea>
+
+            
+                    <label for="activities">Which of the following group activities would you like to participate in before or after the wedding?</label>
+                    <input type="checkbox" id="Jurassic_Park" name="activities_list">Open-air bus tour of Kualoa Ranch (featuring Jurassic Park filming location and WWII historic sites)<br>
+                    <input type="checkbox" id="Pearl Harbor" name="activities_list">Tour of USS Arizona Memorial at Pearl Harbor<br>
+
+
+                    <textarea id="contact_message" placeholder="Message" name="contact_message" aria-label="contact_message"></textarea>
+
+                    what dates will you be on island?
+                    
+                    <input type="submit" value="Submit">
+                </form>   
+            </div>
+        </section>
+        
+
+
+        <section class="photo-block">
+
+            <div class="photo-block-inner">
+                <div>
+                    <img src="img/KualoaRanch.jpg" alt="placeholder image" width="500" height="400">
+                </div>
+                <div>
+                    <img src="img/Molokai-beach.jpg" alt="placeholder image" width="600" height="400">
+                </div>
+                <div>
+                    <img src="img/Rocky-Mountain.jpg" alt="placeholder image" width="500" height="400">
+                </div>
+    
+            </div>
+        </section>
+
+            
+    </main>
+
+    <footer class="site-footer">
+        <div class="container text-centered-mobile">
+            <div class="row">
+
+                <div class="col-2 text-centered">
+                    <img src="img/PJ-coral-logo.png" alt="watercolor coral logo" width="100" height="100">
+                    <h2>P&J</h2>
+                </div>
+
+                <div class="col-3">
+                    <h3>7.25.25</h3>
+                    <p>Ko‘olau Ballrooms
+                        <span class="next-line">45-550 Kionaole Rd.</span>
+                        <span class="next-line">Kāne‘ohe, HI 96744</span>
+                        <span class="next-line">(O‘ahu)</span>
+                    </p>
+                </div>
+
+                
+                <div class="col-3">
+                    <a class="button span-button text-centered" href="#">
+                        <div class="span-button-holder">
+                            <span class="span-button-text">RSVP</span>
+                            <span class="span-button-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="24" height="24" stroke-width="2">
+                                    <path d="M10.5 19h-5.5a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4"></path>
+                                    <path d="M3 7l9 6l2.983 -1.989l6.017 -4.011"></path>
+                                    <path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"></path>
+                                    </svg>
+                            </span>
+                        </div>
+                        <span>By April 1</span>
+                    </a>
+                </div>
+                
+                    
+                <div class="col-4">
+                    <h3>Menu</h3>
+                    <nav class="site-footer-nav col-split">
+                        <ul>
+                            <li><a href="stories.html">Stories</a></li>
+                            <li><a href="event-day.html">Event Day</a></li>
+                            <li><a href="lodging.html">Lodging</a></li>
+                            <li><a href="transport.html">Transport</a></li>
+                            <li><a href="activities.html">Activities</a></li>
+                            <li><a href="questions.html">Q&A</a></li>
+                            <li><a href="index.html#registry-sec">Registry</a></li>
+                            <li><a href="#">RSVP</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-centered">
+                    Like our website? Hire Paul and Jessie to code your 100% bespoke site!
+                </div>
+            </div>
+        
+        </div>
+    </footer>
+
+
+    <!-- MAIN JS FILE -->
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
+

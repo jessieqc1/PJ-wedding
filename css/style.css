@@ -282,6 +282,7 @@ img {
 }
 
 
+
 /* --------------------- */
 /* -------LAYOUT-------- */
 /* --------------------- */
@@ -397,18 +398,11 @@ body {
 
 }
 
-/* CHANGE MARGIN TO 0 ON ALL CHILDREN OF A ROW - OVERRIDE LINE 304*/
+/* CHANGE MARGIN TO 0 ON ALL CHILDREN OF A ROW - OVERRIDE PRIOR SETTING ON GRID ROW ABOVE*/
 #timeline-sec .row > * { 
     margin: 0;
 }
 
-/* FOR DEMO PURPOSES */
-
-/* .demo > * {
-    background-color: #444;
-    padding: 1em;
-    text-align: center;
-} */
 
 /* ---------------------- */
 /* --- SITE STRUCTURE --- */
@@ -656,7 +650,17 @@ body {
     & + .site-main > .hero {
         padding-top: calc(4em + var(--unit-large));
     }
+}
 
+.site-header.on-top-of-hero.nav-light-mode {
+    /* LIGHT MODE (DARK TEXT) */
+    a { 
+        color: var(--color-palette-navy);
+
+        &:hover {
+            color: var(--color-links-dark);
+        }
+    }
 }
 
 
@@ -692,6 +696,13 @@ section:nth-child(odd) {
         color: var(--color-hero-headings);
     }
 
+}
+
+.hero.hero-light-mode {
+    h1 {
+        color: var(--color-links-darker);
+    }
+    
 }
 
 .bg-video {
@@ -808,8 +819,9 @@ section:nth-child(odd) {
         color: var(--color-links-darker);
 
         &:hover {
-            border-color: var(--color-links-lighter);
-            background-color: var(--color-palette-coral);
+            border-color: var(--color-links-darker);
+            background-color: var(--color-links-darker);
+            color: var(--color-links-lighter);
         }
     }
 }
@@ -827,7 +839,7 @@ section:nth-child(odd) {
 }
 
 .light.span-button:hover .span-button-icon{
-    color: white;
+    color: var(--color-links-hover);
 }
 
 .span-button-text {
@@ -1019,7 +1031,6 @@ section:nth-child(odd) {
 
 /* TIMELINE */
 
-
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -1135,6 +1146,10 @@ section:nth-child(odd) {
     background-color: var(--color-palette-lightblue);
     position: relative;
     border-radius: var(--card-border-radius);
+
+    svg {
+        color: var(--color-palette-coral);
+    }
 }
 
 
@@ -1365,10 +1380,6 @@ html {
 #hero-event-day {
     background-image: url(../img/Hawaii-Meeting-Room-Oahu.jpg);
     background-position: center;
-
-    h1 {
-        color: var(--color-text-headings);
-    }
 }
 
 #hero-lodging {
@@ -1485,6 +1496,7 @@ on mobile, how do I make sure me and Paul are still in frame in the hero video? 
 } */
 
 .custom-bullet {
+    padding-left: 28px;
     margin-left: 0;
     list-style: none;
     counter-reset: counter;
@@ -1534,4 +1546,68 @@ on mobile, how do I make sure me and Paul are still in frame in the hero video? 
 
 .overflow-wrap {
     overflow-wrap: break-word;
+}
+
+/* FORM */
+form {
+    max-width: 600px;
+    margin: 2em 0;
+}
+
+form input[type="number"] {
+    width: 100px;
+}
+
+/* form label, */
+form input, form textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    font-family: "Lato", helvetica, arial, sans-serif;
+    margin-top: 1em;
+    margin-bottom: .25em;
+}
+
+form input[type="text"], [type="email"], [type="number"], form textarea {
+    border: 2px solid var(--color-palette-cerulean);
+    border-radius: var(--card-border-radius);
+    padding: .5em;
+    background-color: var(--color-palette-lightblue);
+    color: var(--color-palette-navy);
+
+    &:focus {
+        background-color: var(--color-links-lighter);
+    }
+}
+
+form input[type="submit"] {
+    font-size: inherit;
+    line-height: 1;
+    background-color: var(--color-palette-navy);
+    border: 1px solid var(--color-palette-navy);
+    color: white;
+    padding: 1em;
+    display: inline-block;
+    margin: .5em .5em .5em 0;
+    text-align: center;
+    border-radius: .5em;
+
+        &:hover {
+            color: var(--color-links-lighter);
+            background-color: var(--color-palette-coral);
+            border: 1px solid var(--color-palette-coral);
+        }
+}
+
+form textarea {
+    min-height: 7em;
+    line-height: 1.5;
+    color: var(--color-palette-navy);
+}
+
+form input[type="submit"] {
+    margin-top: 1.5em;
+    width: auto;
+    
 }
