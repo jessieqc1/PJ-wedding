@@ -489,10 +489,8 @@ body {
     .toggle-menu {
 
         /* SET TOGGLE MENU COLORS */
-        --color-togglemenu-background: var(--color-palette-navy);
+        --color-togglemenu-background: rgba(0, 0, 0, 0.8);
         --color-togglemenu-text: var(--color-siteheader-links);
-
-
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
@@ -504,7 +502,7 @@ body {
             border: 1px solid var(--color-siteheader-links);
             color: var(--color-siteheader-links);
             padding: .5em; 
-            position: relative;
+            position: absolute;
             z-index: 100;
             transition: .4s all ease-out;
 
@@ -652,7 +650,7 @@ body {
     }
 }
 
-.site-header.on-top-of-hero.nav-light-mode {
+.site-header.on-top-of-hero.header-light-mode {
     /* LIGHT MODE (DARK TEXT) */
     a { 
         color: var(--color-palette-navy);
@@ -705,7 +703,7 @@ section:nth-child(odd) {
     
 }
 
-.bg-video {
+/* .bg-video {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -714,7 +712,7 @@ section:nth-child(odd) {
     height: 100%;
     object-fit: cover;
     object-position: 30% 35%;
-}
+} */
 
 /* CHANGE Z-INDEX ON THESE ITEMS TO MAKE SURE THEY SIT ON TOP OF THE HEADER VIDEO */
 .hero .container {
@@ -1277,10 +1275,10 @@ html {
 
 /* PARALLAX */
 .parallax {
-    min-height: 300px;
+    min-height: 400px;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center bottom;
 
     h1, p {
         color: var(--color-links-lighter);
@@ -1312,17 +1310,16 @@ html {
 
 
 #parallax-homepage {
-    background-image: url(../img/Koolau-range.jpg);
+    background-image: url(../img/Jessie_Chen_Paul_ENG-57.jpg);
 }
 
 #parallax-stories1 {
-    background-image: url(../img/Paul_patio.jpg);
-    object-fit: cover;
-    object-position: 50% 0%;
+    background-image: url(../img/KualoaRanch.jpg);
+    background-position: 25% 100%;
 }
 
 #parallax-stories2 {
-    background-image: url(../img/Molokai-beach.jpg);
+    background-image: url(../img/Rocky-Mountain.jpg);
 }
 
 #parallax-stories3 {
@@ -1330,11 +1327,18 @@ html {
 }
 
 #parallax-event-day {
-    background-image: url(../img/Koolau-range.jpg);
+    background-image: url(../img/Jessie_Chen_Paul_ENG-95.jpg);
+    background-position: 100% 50%;
+}
+
+#parallax-schedule {
+    background-image: url(../img/Jessie_Chen_Paul_ENG-33.jpg);
+    background-position: 100% 30%;
 }
 
 #parallax-lodging {
     background-image: url(../img/Turtle-Bay.jpg);
+    background-position: 70% center;
 
     @media (max-width: 767px) {
         .fancy-parallax-span {
@@ -1352,7 +1356,8 @@ html {
 }
 
 #parallax-filler {
-    background-image: url(../img/Sequoia-tree.jpg);
+    background-image: url(../img/Koolau-range.jpg);
+    background-position: 30% 70%;
 }
 
 #parallax-beaches {
@@ -1367,31 +1372,31 @@ html {
 }
 
 /* CUSTOM HEROS ON OTHER PAGES */
-/* .hero-homepage {
-    background-image: url(../img/KualoaRanch.jpg);
-    background-position: 30%;
-} */
+#hero-homepage {
+    background-image: url(../img/Jessie_Chen_Paul_ENG-70.jpg);
+    background-position: 100% 50%;
+}
 
 #hero-stories {
-    background-image: url(../img/Rocky-Mountain.jpg);
-    background-position: 50% 85%;
+    background-image: url(../img/Jessie_Chen_Paul_ENG-97.jpg);
+    background-position: 80% 30%;
 }
 
 #hero-event-day {
-    background-image: url(../img/Hawaii-Meeting-Room-Oahu.jpg);
-    background-position: center;
+    background-image: url(../img/Jessie_Chen_Paul_ENG-51.jpg);
+    background-position: 100% 60%;
 }
 
 #hero-lodging {
-    background-image: url("https://cache.marriott.com/is/image/marriotts7prod/mc-hnlmc-hotel-view-rainbow01-23553:Wide-Hor?wid=2880&fit=constrain");
-    background-position: center;
+    background-image: url(../img/Jessie_Chen_Paul_ENG-41.jpg);
+    background-position: 30% 35%;
 }
 
 #hero-transport {
     /* background-image: url("https://www.discounthawaiicarrental.com/wp-content/uploads/2020/09/final_home_hero_bright.jpg"); */
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/TheBus_%28Honolulu%29_20160604_132644.jpg/1600px-TheBus_%28Honolulu%29_20160604_132644.jpg");
     background-size: cover;
-    background-position: 50% 20%;
+    background-position: 50% 30%;
 }
 
 #hero-activities {
