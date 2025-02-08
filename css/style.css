@@ -640,8 +640,29 @@ body {
         color: var(--color-siteheader-links);
 
         &:hover {
-            color: var(--color-links-dark);
+            color: var(--color-links-light);
         }
+    }
+
+    .site-menu a {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            transition: 0.4s;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-links-light);
+            left: 0%;
+            bottom: 10%;
+            transform: scaleX(0);
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+        
     }
 
     /* ADD MORE SPACE ON TOP FOR THE ABSOLUTE HEADER */
@@ -669,9 +690,10 @@ section {
     padding: var(--unit-large) var(--unit-small);
 }
 
-section:nth-child(odd) {
+/* ALTERNATE BACKGROUND COLOR FOR SECTIONS */
+/* section:nth-child(odd) {
     background-color: var(--color-palette-lightblue);
-}
+} */
 
 
 /* HERO SECTIONS*/
@@ -684,6 +706,7 @@ section:nth-child(odd) {
     justify-content: center;
     align-items: center;
     position: relative;
+    
 
     h1 {
         font-size: 4em;
@@ -906,11 +929,11 @@ section:nth-child(odd) {
 }
   
 /* WE USE MAX-WIDTH HERE TO MAKE THE CONTENT INSIDE THIS DIV RESPONSIVE, I.E., THE IMAGE */
-.frontside-content {
+.frontside-content, .backside-content {
     color: black;
     max-width: var(--info-card-width);
     height: var(--info-card-height);
-    /* SETTING THIS EMPTY PLACEHOLDER DIV TO RELATIVE SO THAT THE SUBSEQUENT THE H3 CAN BE ABSOLUTE POSITIONED TO THIS PARENT DIV. */
+    /* SETTING THIS EMPTY PLACEHOLDER DIV TO RELATIVE SO THAT THE SUBSEQUENT H3 CAN BE ABSOLUTE POSITIONED TO THIS PARENT DIV. */
     position: relative;
 
     h3, h4 {
@@ -922,10 +945,10 @@ section:nth-child(odd) {
         padding: 1em 1em 1.3em 1em;
     }
 }
-  
-.backside-content * {
+/* FOR USE WHEN BACKSIDE HAS PARAGRAPH TEXT */
+/* .backside-content * {
     padding: 30px;
-}
+} */
 
 
 /* TRANSPARENCY CARDS */
@@ -1303,14 +1326,27 @@ html {
             }
         }
 
+        p {
+            margin-top: 4em;
+        }
+
+        p span {
+            display: block;
+        }
+
         
     }
 }
 
 
-
 #parallax-homepage {
     background-image: url(../img/Jessie_Chen_Paul_ENG-57.jpg);
+  
+}
+
+#parallax-ring {
+    background-image: url(../img/20250201_161515.jpg);
+    background-position: center 60%;
 }
 
 #parallax-stories1 {
@@ -1327,8 +1363,8 @@ html {
 }
 
 #parallax-event-day {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-95.jpg);
-    background-position: 100% 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-95.jpg);
+    background-position: 50% 50%;
 }
 
 #parallax-schedule {
@@ -1357,7 +1393,7 @@ html {
 
 #parallax-filler {
     background-image: url(../img/Koolau-range.jpg);
-    background-position: 30% 70%;
+    background-position: 30% 40%;
 }
 
 #parallax-beaches {
@@ -1373,45 +1409,49 @@ html {
 
 /* CUSTOM HEROS ON OTHER PAGES */
 #hero-homepage {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-70.jpg);
-    background-position: 100% 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-70.jpg);
+    background-position: 40% 50%;
+
 }
 
 #hero-stories {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-97.jpg);
-    background-position: 80% 30%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-12.jpg);
+    background-position: 80% 80%;
 }
 
 #hero-event-day {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-51.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Hawaii-Meeting-Room-Oahu.jpg);
     background-position: 100% 60%;
 }
 
 #hero-lodging {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-41.jpg);
-    background-position: 30% 35%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Paul-hammock.jpg);
+    background-position: 70% 50%;
 }
 
 #hero-transport {
-    /* background-image: url("https://www.discounthawaiicarrental.com/wp-content/uploads/2020/09/final_home_hero_bright.jpg"); */
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/TheBus_%28Honolulu%29_20160604_132644.jpg/1600px-TheBus_%28Honolulu%29_20160604_132644.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-97.jpg);
     background-size: cover;
     background-position: 50% 30%;
 }
 
 #hero-activities {
-    background-image: url(../img/Dino-attack.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Dino-attack.jpg);
     background-position: 50% 65%;
 }
 
 #hero-questions {
-    background-image: url(../img/Janet-Jackson-concert.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Janet-Jackson-concert.jpg);
     background-position: 50% 65%;
 }
 
 /* CUSTOM BACKGROUNDS ON OTHER PAGES */
 #hotel-block {
     background: linear-gradient(rgba(255 255 255 / 0.8), rgba(255 255 255 / 0.8)), url("https://digital.ihg.com/is/image/ihg/holiday-inn-express-honolulu-4682085618-4x3");
+}
+
+#dresscode {
+    background-color: var(--color-palette-lightblue);
 }
 
 /* TIMELINE FOOTNOTE TEXT */
