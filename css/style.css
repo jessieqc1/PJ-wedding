@@ -1382,11 +1382,11 @@ html {
 
 #parallax-homepage {
     background-image: url(../img/Jessie_Chen_Paul_ENG-57.jpg);
-  
+    background-position: center 100%;  
 }
 
 #parallax-ring {
-    background-image: url(../img/20250201_161515.jpg);
+    background-image: url(../img/ring.jpg);
     background-position: center 60%;
 }
 
@@ -1396,7 +1396,8 @@ html {
 }
 
 #parallax-stories2 {
-    background-image: url(../img/Rocky-Mountain.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Rocky-Mountain.jpg);
+    background-position: center 100%;
 }
 
 #parallax-stories3 {
@@ -1404,12 +1405,12 @@ html {
 }
 
 #parallax-event-day {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-51.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-51-resized.jpg);
     background-position: 55% 100%;
 }
 
 #parallax-schedule {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-33.jpg);
+    background-image: url(../img/Jessie_Chen_Paul_ENG-33-resized.jpg);
     background-position: 50% 30%;
 }
 
@@ -1434,7 +1435,7 @@ html {
 }
 
 #parallax-filler {
-    background-image: url(../img/Koolau-range.jpg);
+    background-image: url(../img/Koolau-range-resized.jpg);
     background-position: 30% 80%;
 }
 
@@ -1464,22 +1465,22 @@ html {
 }
 
 #hero-stories {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-93.jpg);
-    background-position: 35% 20%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-93-cropped.jpg);
+    background-position: 35% 100%;
 }
 
 #hero-event-day {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Hawaii-Meeting-Room-Oahu.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Hawaii-Meeting-Room-Oahu-cropped.jpg);
     background-position: 50% 60%;
 }
 
 #hero-lodging {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Paul-hammock.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Paul-hammock-cropped.jpg);
     background-position: 70% 50%;
 }
 
 #hero-transport {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-97.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-97-cropped.jpg);
     background-size: cover;
     background-position: 60% 30%;
 }
@@ -1496,7 +1497,7 @@ html {
 
 /* CUSTOM BACKGROUNDS ON OTHER PAGES */
 #hotel-block {
-    background: linear-gradient(rgba(255 255 255 / 0.8), rgba(255 255 255 / 0.8)), url("https://digital.ihg.com/is/image/ihg/holiday-inn-express-honolulu-4682085618-4x3");
+    background: linear-gradient(rgba(255 255 255 / 0.8), rgba(255 255 255 / 0.8)), url("../img/holiday-inn-express-room.jpg");
 }
 
 #dresscode {
@@ -1506,6 +1507,7 @@ html {
 #food {
     background-color: var(--color-palette-lightblue);
 }
+
 
 
 /* TIMELINE FOOTNOTE TEXT */
