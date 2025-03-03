@@ -749,13 +749,16 @@ section {
 } */
 
 /* CHANGE Z-INDEX ON THESE ITEMS TO MAKE SURE THEY SIT ON TOP OF THE HEADER VIDEO */
-.hero .container {
+/* .hero .container {
     z-index: 2;
-}
+} */
 
+
+/* CUSTOM HERO ATTRIBUTES */
 .site-header-nav {
     z-index: 3;
 }
+
 
 .hero-full {
     height: 100vh;
@@ -764,6 +767,7 @@ section {
 .hero-sixty {
     height: 60vh;
 }
+
 
 
 /* SITE FOOTER */
@@ -1381,13 +1385,13 @@ html {
 
 
 #parallax-homepage {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-57.jpg);
+    background-image: url(../img/Jessie_Chen_Paul_ENG-57-cropped.jpg);
     background-position: center 100%;  
 }
 
 #parallax-ring {
-    background-image: url(../img/ring.jpg);
-    background-position: center 60%;
+    background-image: url(../img/ring-cropped.jpg);
+    background-position: center 80%;
 }
 
 #parallax-stories1 {
@@ -1405,17 +1409,17 @@ html {
 }
 
 #parallax-event-day {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-51-resized.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-51-resized-cropped.jpg);
     background-position: 55% 100%;
 }
 
 #parallax-schedule {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-33-resized.jpg);
+    background-image: url(../img/Jessie_Chen_Paul_ENG-33-resized-cropped.jpg);
     background-position: 50% 30%;
 }
 
 #parallax-lodging {
-    background-image: url(../img/Turtle-Bay.jpg);
+    background-image: url(../img/Turtle-Bay-resized-cropped.jpg);
     background-position: 70% center;
 
     @media (max-width: 767px) {
@@ -1430,13 +1434,13 @@ html {
 }
 
 #parallax-transport {
-    background-image: url(../img/Kings-Canyon-Car.jpg);
+    background-image: url(../img/Kings-Canyon-Car-cropped.jpg);
     background-position: 40% 90%;
 }
 
 #parallax-filler {
-    background-image: url(../img/Koolau-range-resized.jpg);
-    background-position: 30% 80%;
+    background-image: url(../img/Koolau-range-resized-cropped.jpg);
+    background-position: 30% 100%;
 }
 
 #parallax-beaches {
@@ -1445,7 +1449,7 @@ html {
 }
 
 #parallax-sightseeing {
-    background-image: url(../img/shave-ice.jpg);
+    background-image: url(../img/shave-ice-cropped.jpg);
     background-position: 50% 90%;
 }
 
@@ -1459,14 +1463,14 @@ html {
 
 /* CUSTOM HEROS ON OTHER PAGES */
 #hero-homepage {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-70.jpg);
-    background-position: 40% 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-70-cropped.jpg);
+    background-position: 45% 100%;
 
 }
 
 #hero-stories {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-93-cropped.jpg);
-    background-position: 35% 100%;
+    background-position: 22% 100%;
 }
 
 #hero-event-day {
@@ -1482,12 +1486,12 @@ html {
 #hero-transport {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-97-cropped.jpg);
     background-size: cover;
-    background-position: 60% 30%;
+    background-position: 65% 30%;
 }
 
 #hero-activities {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Dino-attack.jpg);
-    background-position: 50% 65%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Dino-attack-cropped.jpg);
+    background-position: 50% 85%;
 }
 
 #hero-questions {
@@ -1497,7 +1501,8 @@ html {
 
 /* CUSTOM BACKGROUNDS ON OTHER PAGES */
 #hotel-block {
-    background: linear-gradient(rgba(255 255 255 / 0.8), rgba(255 255 255 / 0.8)), url("../img/holiday-inn-express-room.jpg");
+    background: linear-gradient(rgba(255 255 255 / 0.8), rgba(255 255 255 / 0.8)), url("../img/holiday-inn-express-room-cropped.jpg");
+    background-position: 90% 30%;
 }
 
 #dresscode {
@@ -1539,14 +1544,14 @@ html {
     margin-bottom: 0.6em;
 }
 
+/* ADD PADDING ABOVE TAKE A HIKE PICTURE ON LARGE SCREEN */
+@media (min-width: 768px) {
+    #falls-pic img {
+        margin-top: 2em;
+    }
+}
 
 /* to dos
-
-
-
-button animation in mobile state ok?
-ok to keep animations in mobile?
-
 
 
 done
