@@ -1385,12 +1385,12 @@ html {
 
 
 #parallax-homepage {
-    background-image: url(../img/Jessie_Chen_Paul_ENG-57-cropped.jpg);
+    background-image: url(../img/Jessie_Chen_Paul_ENG-57-cropped-resized.jpg);
     background-position: center 100%;  
 }
 
 #parallax-ring {
-    background-image: url(../img/ring-cropped.jpg);
+    background-image: url(../img/ring-cropped-resized.jpg);
     background-position: center 80%;
 }
 
@@ -1400,12 +1400,12 @@ html {
 }
 
 #parallax-stories2 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Rocky-Mountain.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Rocky-Mountain-cropped-resized.jpg);
     background-position: center 100%;
 }
 
 #parallax-stories3 {
-    background-image: url(../img/Pumpkin-patch.jpg);
+    background-image: url(../img/Pumpkin-patch-cropped-resized.jpg);
 }
 
 #parallax-event-day {
@@ -1449,7 +1449,7 @@ html {
 }
 
 #parallax-sightseeing {
-    background-image: url(../img/shave-ice-cropped.jpg);
+    background-image: url(../img/shave-ice-cropped-resized.jpg);
     background-position: 50% 90%;
 }
 
@@ -1463,13 +1463,13 @@ html {
 
 /* CUSTOM HEROS ON OTHER PAGES */
 #hero-homepage {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-70-cropped.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(../img/Jessie_Chen_Paul_ENG-70-cropped-resized.jpg);
     background-position: 45% 100%;
 
 }
 
 #hero-stories {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-93-cropped.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-93-cropped-resized.jpg);
     background-position: 22% 100%;
 }
 
@@ -1479,12 +1479,12 @@ html {
 }
 
 #hero-lodging {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Paul-hammock-cropped.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Paul-hammock-cropped-resized.jpg);
     background-position: 70% 50%;
 }
 
 #hero-transport {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-97-cropped.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-97-cropped-resized.jpg);
     background-size: cover;
     background-position: 65% 30%;
 }
@@ -1495,7 +1495,7 @@ html {
 }
 
 #hero-questions {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-95-cropped.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url(../img/Jessie_Chen_Paul_ENG-95-cropped-resized.jpg);
     background-position: 50% 100%;
 }
 
